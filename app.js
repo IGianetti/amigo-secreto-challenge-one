@@ -7,7 +7,8 @@ function agregarAmigo(){
     const input = document.getElementById("amigo");
     const nombre = input.value;
     if (validarNombre(nombre)) {
-        amigos.push(nombre);      // Agregamos el nombre a la lista  
+        const nombreCapitalizado = capitalizarInicial(nombre)
+        amigos.push(nombreCapitalizado);      // Agregamos el nombre a la lista  
         input.value = "";         // limpiamos el campo de entrada 
         console.log(amigos)
         mostrarAmigos();
@@ -17,24 +18,32 @@ function agregarAmigo(){
 }
 
 function validarNombre(nombre) {
+    // Convertimos a minusculs y eliminamos espacios
+    const nombreModelo = nombre.trim().toLowerCase();
+    
+    
     // Verificamos que el campo de entrada no este vacio
-    if (nombre.trim() === "") {
+    if (nombreModelo === "") {
         alert("Por favor, inserte un nombre")
         return false;
     }
 
     // Verificamos nombres validos, espacios y caracteres
     const nombreRegex = /^[a-zA-Z\s]+$/; 
-    if (!nombreRegex.test(nombre)) {
+    if (!nombreRegex.test(nombreModelo)) {
         alert("El nombre solo puede contener letras y espacios")
         return false;
     }
     // Verificamos nombres repetidos
-    if (amigos.includes(nombre)) {
+    if (amigos.some(amigo => amigo.toLowerCase() === nombreModelo)) {
          alert("Nombre repetido, agregue un nombre distintos a la lista")
          return false;
     }
     return true;
+}
+
+function capitalizarInicial(nombre) {
+    return nombre.charAt(0).toUpperCase() + nombre.slice(1)
 }
 
 function crearElemLista(nombreAmigo) {
