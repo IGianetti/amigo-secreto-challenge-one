@@ -40,7 +40,7 @@ Este proyecto implementa un sorteo de amigo secreto utilizando HTML, CSS y JavaS
 
 - **index.html:** Archivo principal que contiene la estructura HTML y la interfaz del juego.
 - **script.js:** Archivo JavaScript que contiene la lógica del juego, incluyendo las funciones para agregar participantes, validar nombres, realizar el sorteo y reiniciar el juego.
-- **styles.css:** Archivo CSS (opcional) para dar estilo a la interfaz del juego.
+- **styles.css:** Archivo CSS para dar estilo a la interfaz del juego.
 
 ## Funciones Principales
 
@@ -55,4 +55,4 @@ Este proyecto implementa un sorteo de amigo secreto utilizando HTML, CSS y JavaS
 
 ## Autor
 
-[Ivan Gianetti]
+Ivan Gianetti
