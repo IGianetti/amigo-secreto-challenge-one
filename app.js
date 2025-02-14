@@ -26,4 +26,20 @@ function agregarAmigo(){
 
     amigos.push(nombre); //agregamos el nombre a la lista
     input.value = ""; // limpiar campo de entrada
+    console.log(amigos)
+    mostrarAmigos();
+
+}
+
+function mostrarAmigos() {
+    const lista = document.getElementById("listaAmigos"); // obtengo lista
+    lista.innerHTML = ""; // limpio lista
+
+    for (let i = 0; i < amigos.length; i++) {
+        const nombreAmigo = amigos[i]; // obtener amigos actual
+        const nuevoElemento = document.createElement("li") //crear elemento li nuevo
+        nuevoElemento.textContent = nombreAmigo //asignar nombre como texto al elemento li
+        lista.appendChild(nuevoElemento); // agregar elemento li a la lista ul
+        
+    }
 }
